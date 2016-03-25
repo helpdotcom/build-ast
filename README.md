@@ -16,7 +16,7 @@ $ npm test
 
 ## API
 
-See [`DOCS.md`][DOCS.md]
+See [`DOCS.md`](DOCS.md)
 
 ## Author
 
