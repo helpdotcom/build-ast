@@ -1,0 +1,28 @@
+{
+  "name": "@helpdotcom/build-ast",
+  "version": "1.0.0",
+  "description": "Make build AST nodes easy",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "lintit",
+    "test": "tap test/*.js --cov"
+  },
+  "dependencies": {
+    "acorn": "~3.0.4",
+    "escodegen": "~1.8.0"
+  },
+  "devDependencies": {
+    "lintit": "~1.0.1",
+    "tap": "~5.7.0"
+  },
+  "license": "MIT",
+  "author": "Evan Lucas <evanlucas@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://git.help.com/common-backend/build-ast"
+  },
+  "homepage": "https://git.help.com/common-backend/build-ast",
+  "bugs": {
+    "url": "https://git.help.com/common-backend/build-ast/issues"
+  }
+}
