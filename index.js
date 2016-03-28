@@ -208,7 +208,10 @@ Builder.prototype.returns = function returns(arg) {
 
 Builder.new = function(fnName, args) {
   args = (args || []).map((item) => {
-    return id(item)
+    if (typeof item === 'string')
+      return id(item)
+
+    return item
   })
   return E.NEW(id(fnName), args)
 }

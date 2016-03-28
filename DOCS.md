@@ -226,8 +226,8 @@ return true
 Calls `new` on the _name_ as a constructor.
 
 * `name` [`<String>`][] The constructor name to call
-* `args` [`<Array>`][] The arguments to pass to the constructor.
-  Should be an array of strings. They will be mapped into identifiers.
+* `args` [`<Array>`][] The arguments to pass to the constructor. In the event
+  an item of _args_ is a string, it will be returned as an `Identifier`.
 
 
 #### Builder().build()
