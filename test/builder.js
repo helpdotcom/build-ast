@@ -33,6 +33,8 @@ test('Builder', (t) => {
     , Builder.number('2')
     , Builder.number('3')
     ]))
+    .assign('Event.prototype.re', Builder.regex(/abc$/i))
+    .assign('Event.prototype.re2', Builder.regex('/abc$/'))
     .program()
 
   t.equal(gen(b), `'use strict';
@@ -54,7 +56,9 @@ Event.prototype.ages = [
   1,
   2,
   3
-]`)
+];
+Event.prototype.re = /abc$/i;
+Event.prototype.re2 = /abc$/`)
 
   t.end()
 })

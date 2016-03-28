@@ -87,6 +87,15 @@ Builder().number('3')
 ```
 
 
+#### Builder().regex(re)
+
+Creates a regular expression.
+
+* `re` [`<String>`][] | [`<RegExp>`][] The string or regex
+
+Must start with a slash (`/`).
+
+
 #### Builder().declare(type, name, val)
 
 Declare a variable.
@@ -235,4 +244,5 @@ Marks the builder as a program.
 [`<Function>`]: https://mdn.io/function
 [`<Number>`]: https://mdn.io/number
 [`<Object>`]: https://mdn.io/object
+[`<RegExp>`]: https://mdn.io/RegExp
 [`<String>`]: https://mdn.io/string

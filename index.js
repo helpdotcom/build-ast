@@ -85,6 +85,23 @@ Builder.prototype.number = function number(val) {
   return this.push(Builder.number(val))
 }
 
+Builder.regex = function(re) {
+  const str = re.toString()
+  let pattern = str.slice(1)
+  const flags = str.match(/[gimuy]*$/)[0]
+  if (flags.length) {
+    pattern = pattern.slice(0, -flags.length - 1)
+  } else {
+    pattern = pattern.slice(0, -1)
+  }
+  const r = new RegExp(pattern, flags)
+  return ast.regex(r, str, pattern, flags)
+}
+
+Builder.prototype.regex = function regex(re) {
+  return this.push(Builder.regex(re))
+}
+
 Builder.declare = function(type, name, val) {
   return D.VARIABLE([
     { type: 'VariableDeclarator'
