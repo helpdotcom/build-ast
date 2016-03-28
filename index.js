@@ -227,3 +227,7 @@ Builder.callFunction = function(fnName, args) {
 Builder.prototype.callFunction = function callFunction(fnName, args) {
   return this.push(Builder.callFunction(fnName, args))
 }
+
+Builder.prototype.throws = function throws(arg) {
+  return this.push(S.THROWS(arg))
+}

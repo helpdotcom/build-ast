@@ -239,6 +239,13 @@ Calls a function with _name_ with the _args_
 * `args` [`<Array>`][] Array of AST Nodes
 
 
+#### Builder().throws(arg)
+
+Creates a `ThrowStatement` throwing the given _arg_.
+
+* `arg` [`<Object>`][] AST Node.
+
+
 #### Builder().build()
 
 Returns the builder's body.

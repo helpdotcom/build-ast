@@ -4,6 +4,7 @@ const test = require('tap').test
 const Builder = require('../')
 const common = require('./common')
 const gen = common.gen
+const S = Builder.ast.statement
 
 test('Builder', (t) => {
   const b = Builder()
@@ -25,6 +26,9 @@ test('Builder', (t) => {
     , S.EXPRESSION(Builder.callFunction('this.setName', [
         Builder.id('obj')
       ]))
+    , Builder()
+        .throws(Builder.new('Error', [Builder.string('NOPE')]))
+        .body[0]
     ])
     .assign('Event.prototype.names', Builder.array([
       Builder.string('a')
