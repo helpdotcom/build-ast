@@ -230,6 +230,15 @@ Calls `new` on the _name_ as a constructor.
   an item of _args_ is a string, it will be returned as an `Identifier`.
 
 
+#### Builder().callFunction(name, args)
+
+Calls a function with _name_ with the _args_
+
+* `name` [`<String>`][] The function name, a dot notated string that can
+  represent a nested object
+* `args` [`<Array>`][] Array of AST Nodes
+
+
 #### Builder().build()
 
 Returns the builder's body.

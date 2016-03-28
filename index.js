@@ -219,3 +219,11 @@ Builder.new = function(fnName, args) {
 Builder.prototype.new = function(fnName, args) {
   return this.push(Builder.new(fnName, args))
 }
+
+Builder.callFunction = function(fnName, args) {
+  return E.CALL(ast.objectPath(fnName), args)
+}
+
+Builder.prototype.callFunction = function callFunction(fnName, args) {
+  return this.push(Builder.callFunction(fnName, args))
+}

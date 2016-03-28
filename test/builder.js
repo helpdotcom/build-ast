@@ -22,6 +22,9 @@ test('Builder', (t) => {
           Builder.returns(Builder.new('Event', ['buffer']))
         )
       )
+    , S.EXPRESSION(Builder.callFunction('this.setName', [
+        Builder.id('obj')
+      ]))
     ])
     .assign('Event.prototype.names', Builder.array([
       Builder.string('a')
@@ -46,6 +49,8 @@ function Event(buffer) {
   if (!(this instanceof Event)) {
     return new Event(buffer)
   }
+  this.setName(obj);
+  throw new Error('NOPE')
 }
 Event.prototype.names = [
   'a',
