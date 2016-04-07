@@ -6,5 +6,5 @@ stages:
 build_and_test_job:
   stage: build
   script:
-    - npm install
+    - npm install --loglevel=warn --spin=false
     - npm test
