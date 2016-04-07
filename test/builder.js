@@ -4,7 +4,8 @@ const test = require('tap').test
 const Builder = require('../')
 const common = require('./common')
 const gen = common.gen
-const S = Builder.ast.statement
+const ast = Builder.ast
+const S = ast.statement
 
 test('Builder', (t) => {
   const b = Builder()
@@ -42,6 +43,13 @@ test('Builder', (t) => {
     ]))
     .assign('Event.prototype.re', Builder.regex(/abc$/i))
     .assign('Event.prototype.re2', Builder.regex('/abc$/'))
+    .assign('Event.TYPE', Builder.typeof('thing.function'))
+    .throws(Builder.new('Error', [
+      ast.templateLiteral([Builder.id('variable_name')], [
+        ast.templateElement('Weird ', 'Weird ', false)
+      , ast.templateElement('', '', true)
+      ])
+    ]))
     .program()
 
   t.equal(gen(b), `'use strict';
@@ -67,7 +75,9 @@ Event.prototype.ages = [
   3
 ];
 Event.prototype.re = /abc$/i;
-Event.prototype.re2 = /abc$/`)
+Event.prototype.re2 = /abc$/;
+Event.TYPE = typeof thing.function;
+throw new Error(\`Weird \$\{ variable_name \}\`)`)
 
   t.end()
 })

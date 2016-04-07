@@ -231,3 +231,11 @@ Builder.prototype.callFunction = function callFunction(fnName, args) {
 Builder.prototype.throws = function throws(arg) {
   return this.push(S.THROWS(arg))
 }
+
+Builder.typeof = function(str) {
+  return E.TYPEOF(ast.objectPath(str))
+}
+
+Builder.prototype.typeof = function(str) {
+  return this.push(Builder.typeof(str))
+}
