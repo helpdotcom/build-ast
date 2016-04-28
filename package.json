@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "lintit": "~1.0.1",
-    "tap": "~5.7.0"
+    "tap": "~5.7.1"
   },
   "license": "MIT",
   "author": "Evan Lucas <evanlucas@me.com>",
