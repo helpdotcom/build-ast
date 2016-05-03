@@ -1,14 +1,23 @@
-image: node:latest
-
-stages:
-  - build
-  
 cache:
   paths:
     - node_modules/
 
-build_and_test_job:
-  stage: build
+before_script:
+  - npm install --loglevel=warn --spin=false
+
+stages:
+  - test
+
+test:node5:
+  image: node:5.11.0-wheezy
+  stage: test
   script:
     - npm install --loglevel=warn --spin=false
-    - npm test
+    - npm test -- --coverage-report=text-summary
+
+test:node6:
+  image: node:latest
+  stage: test
+  script:
+    - npm install --loglevel=warn --spin=false
+    - npm test -- --coverage-report=text-summary
