@@ -246,6 +246,18 @@ Creates a `ThrowStatement` throwing the given _arg_.
 * `arg` [`<Object>`][] AST Node.
 
 
+#### Builder().and(...args)
+
+Takes a variable amount of arguments that should all be an [`<Object>`][].
+This joins two expressions using the `&&` operator.
+
+
+#### Builder().equals(left, right)
+
+* `left` [`<Object>`][] The left hand side
+* `right` [`<Object>`][] The right hand side
+
+
 #### Builder().build()
 
 Returns the builder's body.

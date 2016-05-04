@@ -50,6 +50,16 @@ test('Builder', (t) => {
       , ast.templateElement('', '', true)
       ])
     ]))
+    .assign('Event.debug', Builder.and(
+      Builder.equals(
+        ast.objectPath('process.env.DEBUG')
+      , Builder.number(1)
+      )
+    , Builder.equals(
+        ast.objectPath('process.env.NODE_DEBUG')
+      , Builder.number(1)
+      )
+    ))
     .program()
 
   t.equal(gen(b), `'use strict';
@@ -77,7 +87,8 @@ Event.prototype.ages = [
 Event.prototype.re = /abc$/i;
 Event.prototype.re2 = /abc$/;
 Event.TYPE = typeof thing.function;
-throw new Error(\`Weird \$\{ variable_name \}\`)`)
+throw new Error(\`Weird \$\{ variable_name \}\`);
+Event.debug = process.env.DEBUG === 1 && process.env.NODE_DEBUG === 1`)
 
   t.end()
 })

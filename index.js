@@ -47,6 +47,27 @@ Builder.prototype.program = function program() {
 // When adding a new helper, please put them in alphabetical order.
 // It makes digging through the code significantly easier.
 
+Builder.and = function() {
+  if (arguments.length < 2) {
+    throw new Error('and requires two arguments')
+  }
+
+  if (arguments.length === 2) {
+    return E.LOGICAL(arguments[0], '&&', arguments[1])
+  }
+
+  const args = new Array(arguments.length)
+  for (let i = 0; i < arguments.length; i++) {
+    args[i] = arguments[i]
+  }
+
+  return AND(args)
+}
+
+Builder.prototype.and = function and(left, right) {
+  return this.push(Builder.and(left, right))
+}
+
 Builder.assign = function(key, val, op) {
   op = op || '='
   return S.EXPRESSION(E.ASSIGNMENT(
@@ -94,6 +115,14 @@ Builder.declare = function(type, name, val) {
 
 Builder.prototype.declare = function declare(type, name, val) {
   return this.push(Builder.declare(type, name, val))
+}
+
+Builder.equals = function(left, right) {
+  return E.BINARY(left, '===', right)
+}
+
+Builder.prototype.equals = function equals(left, right) {
+  return this.push(Builder.equals(left, right))
 }
 
 Builder.function = function(name, args, body) {
@@ -246,4 +275,21 @@ Builder.prototype.use = function use(n) {
   const str = `use ${n}`
   const ele = S.EXPRESSION(ast.string(str))
   return this.push(ele)
+}
+
+// say we have args.length === 3
+// we will end up with this
+// E.LOGICAL(args[0], '&&', E.LOGICAL(
+//   args[1], '&&', args[2]
+// ))
+function AND(args) {
+  args = args.slice()
+  let right = args.pop()
+  let left
+  while (args.length) {
+    left = args.pop()
+    right = AND_(left, right)
+  }
+
+  return E.LOGICAL(left, '&&', right)
 }
