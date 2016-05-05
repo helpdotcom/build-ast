@@ -31,6 +31,22 @@ test('Builder', (t) => {
         .throws(Builder.new('Error', [Builder.string('NOPE')]))
         .body[0]
     ])
+    .assign('Event.prototype.checkEquality', Builder.function('', [
+      'a', 'b', 'c'], [
+      Builder.if(
+        Builder.and(
+          ast.objectPath('a')
+        , ast.objectPath('b')
+        , ast.objectPath('c')
+      )
+      , Builder.block(
+          Builder.returns(ast.objectPath('true'))
+        )
+      , Builder.block(
+          Builder.returns(ast.objectPath('false'))
+        )
+      )
+    ]))
     .assign('Event.prototype.names', Builder.array([
       Builder.string('a')
     , Builder.string('b')
@@ -74,6 +90,13 @@ function Event(buffer) {
   this.setName(obj);
   throw new Error('NOPE')
 }
+Event.prototype.checkEquality = function (a, b, c) {
+  if (a && b && c) {
+    return true
+  } else {
+    return false
+  }
+};
 Event.prototype.names = [
   'a',
   'b',

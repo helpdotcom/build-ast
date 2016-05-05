@@ -284,12 +284,12 @@ Builder.prototype.use = function use(n) {
 // ))
 function AND(args) {
   args = args.slice()
-  let right = args.pop()
-  let left
+  let right
+  let left = args.shift()
   while (args.length) {
-    left = args.pop()
-    right = AND_(left, right)
+    right = args.shift()
+    left = E.LOGICAL(left, '&&', right)
   }
 
-  return E.LOGICAL(left, '&&', right)
+  return left
 }
