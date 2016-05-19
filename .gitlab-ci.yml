@@ -2,22 +2,19 @@ cache:
   paths:
     - node_modules/
 
-before_script:
-  - npm install --loglevel=warn --spin=false
-
 stages:
   - test
 
 test:node5:
-  image: node:5.11.0-wheezy
+  image: quay.io/help/node:5
   stage: test
   script:
-    - npm install --loglevel=warn --spin=false
+    - npm install
     - npm test -- --coverage-report=text-summary
 
 test:node6:
-  image: node:latest
+  image: quay.io/help/node:6
   stage: test
   script:
-    - npm install --loglevel=warn --spin=false
+    - npm install
     - npm test -- --coverage-report=text-summary
