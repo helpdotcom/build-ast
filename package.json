@@ -4,7 +4,8 @@
   "description": "Make build AST nodes easy",
   "main": "index.js",
   "scripts": {
-    "pretest": "lintit",
+    "check": "check-pkg",
+    "pretest": "lintit && check-pkg",
     "test": "tap test --cov"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
     "escodegen": "~1.8.0"
   },
   "devDependencies": {
+    "check-pkg": "~2.0.1",
     "lintit": "~1.0.1",
     "tap": "~5.7.1"
   },
