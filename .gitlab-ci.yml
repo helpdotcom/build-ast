@@ -4,17 +4,39 @@ cache:
 
 stages:
   - test
+  - release
+
+before_script:
+  - touch .npmrc
+  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+  - npm install
 
 test:node5:
   image: quay.io/help/node:5
   stage: test
   script:
-    - npm install
     - npm test -- --coverage-report=text-summary
 
 test:node6:
   image: quay.io/help/node:6
   stage: test
   script:
-    - npm install
     - npm test -- --coverage-report=text-summary
+
+release:
+  image: quay.io/help/node:5
+  stage: release
+  script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\nHost git.help.com\n\tPort 2222\n\n" >> ~/.ssh/config'
+    - export CI_PUSH_REPO=`echo $CI_BUILD_REPO | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'`
+    - git config user.email "ops@help.com"
+    - git config user.name "commit-bot"
+    - git remote set-url --push origin "${CI_PUSH_REPO}"
+    - git checkout master
+    - npm run release -- --publish
+  only:
+    - master
