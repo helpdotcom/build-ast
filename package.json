@@ -6,13 +6,15 @@
   "scripts": {
     "check": "check-pkg",
     "pretest": "lintit && check-pkg",
-    "test": "tap test --cov"
+    "test": "tap test --cov",
+    "release": "releaseit"
   },
   "dependencies": {
     "acorn": "~3.0.4",
     "escodegen": "~1.8.0"
   },
   "devDependencies": {
+    "@helpdotcom/releaseit": "~2.0.5",
     "check-pkg": "~2.0.1",
     "lintit": "~1.0.1",
     "tap": "~5.7.1"
