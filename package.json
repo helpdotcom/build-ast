@@ -16,7 +16,7 @@
   "devDependencies": {
     "@helpdotcom/releaseit": "~2.0.5",
     "check-pkg": "~2.0.1",
-    "lintit": "~1.0.1",
+    "lintit": "~1.0.3",
     "tap": "~5.7.1"
   },
   "license": "MIT",
