@@ -1,3 +1,7 @@
+# 2016-06-26, Version 1.4.4 (Stable)
+
+* [[1114c9d340](https://git.help.com/common-backend/build-ast/commit/1114c9d340)] - deps: tap@5.7.3 (Commit Bot)
+
 # 2016-06-26, Version 1.4.3 (Stable)
 
 * [[f6c400662d](https://git.help.com/common-backend/build-ast/commit/f6c400662d)] - deps: lintit@1.0.3 (Evan Lucas)
