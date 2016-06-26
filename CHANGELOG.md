@@ -1,3 +1,7 @@
+# 2016-06-26, Version 1.4.3 (Stable)
+
+* [[f6c400662d](https://git.help.com/common-backend/build-ast/commit/f6c400662d)] - deps: lintit@1.0.3 (Evan Lucas)
+
 # 2016-06-07, Version 1.4.2 (Stable)
 
 * [[751d7d74bd](https://git.help.com/common-backend/build-ast/commit/751d7d74bd)] - ci: auto release on push to master (Evan Lucas)
