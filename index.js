@@ -202,6 +202,14 @@ Builder.prototype.not = function not(arg) {
   return this.push(Builder.not(arg))
 }
 
+Builder.notEquals = function(left, right) {
+  return E.BINARY(left, '!==', right)
+}
+
+Builder.prototype.notEquals = function notEquals(left, right) {
+  return this.push(Builder.notEquals(left, right))
+}
+
 Builder.prototype.number = function number(val) {
   return this.push(Builder.number(val))
 }

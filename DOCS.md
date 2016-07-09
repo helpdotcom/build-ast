@@ -187,6 +187,14 @@ operator.
 * `expr` [`<Object>`][] AST Node
 
 
+#### Builder().notEquals(left, right)
+
+* `left` [`<Object>`][] The left hand side
+* `right` [`<Object>`][] The right hand side
+
+**Note: uses strict equality (`!==`)**
+
+
 #### Builder().number(n)
 
 Creates a raw number.
