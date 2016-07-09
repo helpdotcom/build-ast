@@ -44,7 +44,7 @@ test('Builder', (t) => {
         Builder.id('obj')
       ]))
     , Builder()
-        .throws(Builder.new('Error', [Builder.string('NOPE')]))
+        .throws(Builder.Error('NOPE'))
         .body[0]
     ])
     .assign('Event.prototype.checkEquality', Builder.function('', [
@@ -76,12 +76,13 @@ test('Builder', (t) => {
     .assign('Event.prototype.re', Builder.regex(/abc$/i))
     .assign('Event.prototype.re2', Builder.regex('/abc$/'))
     .assign('Event.TYPE', Builder.typeof('thing.function'))
-    .throws(Builder.new('Error', [
+    .throws(Builder.TypeError(
       ast.templateLiteral([Builder.id('variable_name')], [
         ast.templateElement('Weird ', 'Weird ', false)
       , ast.templateElement('', '', true)
       ])
-    ]))
+    ))
+    .throws(Builder.RangeError('NOPE'))
     .assign('Event.debug', Builder.and(
       Builder.equals(
         Builder.objectPath('process.env.DEBUG')
@@ -126,7 +127,8 @@ Event.prototype.ages = [
 Event.prototype.re = /abc$/i;
 Event.prototype.re2 = /abc$/;
 Event.TYPE = typeof thing.function;
-throw new Error(\`Weird \$\{ variable_name \}\`);
+throw new TypeError(\`Weird \$\{ variable_name \}\`);
+throw new RangeError('NOPE');
 Event.debug = process.env.DEBUG === 1 && process.env.NODE_DEBUG !== 1`)
 
   t.end()

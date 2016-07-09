@@ -286,6 +286,28 @@ Builder.prototype.use = function use(n) {
   return this.push(ele)
 }
 
+Builder.Error = function(msg) {
+  return genError('Error', msg)
+}
+
+Builder.TypeError = function(msg) {
+  return genError('TypeError', msg)
+}
+
+Builder.RangeError = function(msg) {
+  return genError('RangeError', msg)
+}
+
+function genError(type, arg) {
+  if (typeof arg === 'string') {
+    return Builder.new(type, [
+      Builder.string(arg)
+    ])
+  }
+
+  return Builder.new(type, [arg])
+}
+
 // say we have args.length === 3
 // we will end up with this
 // E.LOGICAL(args[0], '&&', E.LOGICAL(

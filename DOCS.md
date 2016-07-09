@@ -305,9 +305,42 @@ Returns a member expression for the given dot notated object path.
 * `str` [`<String>`][] Dot notated string (ex. 'admin.id')
 
 
+#### Builder.Error(msg)
+
+Returns the representation of an [`<Error>`][] object.
+
+* `msg` [`<String>`][] | [`<Object>`][] The message
+
+If `msg` is a `string`, it will be properly wrapped. Otherwise, it will be
+unmodified.
+
+
+#### Builder.TypeError(msg)
+
+Returns the representation of a [`<TypeError>`][] object.
+
+* `msg` [`<String>`][] | [`<Object>`][] The message
+
+If `msg` is a `string`, it will be properly wrapped. Otherwise, it will be
+unmodified.
+
+
+#### Builder.RangeError(msg)
+
+Returns the representation of a [`<RangeError>`][] object.
+
+* `msg` [`<String>`][] | [`<Object>`][] The message
+
+If `msg` is a `string`, it will be properly wrapped. Otherwise, it will be
+unmodified.
+
+
 [`<Array>`]: https://mdn.io/array
+[`<Error>`]: https://mdn.io/Error
 [`<Function>`]: https://mdn.io/function
 [`<Number>`]: https://mdn.io/number
 [`<Object>`]: https://mdn.io/object
+[`<RangeError>`]: https://mdn.io/RangeError
 [`<RegExp>`]: https://mdn.io/RegExp
 [`<String>`]: https://mdn.io/string
+[`<TypeError>`]: https://mdn.io/TypeError
