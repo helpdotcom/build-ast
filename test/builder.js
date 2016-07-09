@@ -7,6 +7,22 @@ const gen = common.gen
 const ast = Builder.ast
 const S = ast.statement
 
+test('Builder API', (t) => {
+  const ignores = [
+    'ast'
+  , 'expression'
+  , 'statement'
+  , 'declaration'
+  ]
+  const keys = Object.keys(Builder).filter((item) => {
+    return !~ignores.indexOf(item)
+  })
+  for (const key of keys) {
+    t.type(Builder[key], 'function')
+  }
+  t.end()
+})
+
 test('Builder', (t) => {
   const b = Builder()
     .use('strict')
@@ -35,15 +51,15 @@ test('Builder', (t) => {
       'a', 'b', 'c'], [
       Builder.if(
         Builder.and(
-          ast.objectPath('a')
-        , ast.objectPath('b')
-        , ast.objectPath('c')
+          Builder.objectPath('a')
+        , Builder.objectPath('b')
+        , Builder.objectPath('c')
       )
       , Builder.block(
-          Builder.returns(ast.objectPath('true'))
+          Builder.returns(Builder.objectPath('true'))
         )
       , Builder.block(
-          Builder.returns(ast.objectPath('false'))
+          Builder.returns(Builder.objectPath('false'))
         )
       )
     ]))
@@ -68,11 +84,11 @@ test('Builder', (t) => {
     ]))
     .assign('Event.debug', Builder.and(
       Builder.equals(
-        ast.objectPath('process.env.DEBUG')
+        Builder.objectPath('process.env.DEBUG')
       , Builder.number(1)
       )
     , Builder.equals(
-        ast.objectPath('process.env.NODE_DEBUG')
+        Builder.objectPath('process.env.NODE_DEBUG')
       , Builder.number(1)
       )
     ))

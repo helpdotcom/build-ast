@@ -13,6 +13,7 @@ Builder.id = id
 Builder.number = ast.number
 Builder.string = ast.string
 Builder.this = E.THIS
+Builder.objectPath = ast.objectPath
 
 module.exports = Builder
 

@@ -19,7 +19,7 @@ Builder()
   .module('Test')
 ```
 
-The static methods on `Builder` will return an [`<Object>`][].
+The static methods on `Builder` will return a [`<Object>`][].
 
 
 #### Builder().and(...args)
@@ -284,6 +284,17 @@ Builder().use('strict')
 #### Builder().program()
 
 Marks the builder as a program.
+
+
+***
+
+## Additional static methods
+
+#### Builder.objectPath(str)
+
+Returns a member expression for the given dot notated object path.
+
+* `str` [`<String>`][] Dot notated string (ex. 'admin.id')
 
 
 [`<Array>`]: https://mdn.io/array
