@@ -1,3 +1,9 @@
+# 2016-07-11, Version 1.5.0 (Stable)
+
+* [[e535ffc8bd](https://git.help.com/common-backend/build-ast/commit/e535ffc8bd)] - **(SEMVER-MINOR)** builder: add helpers for Error, TypeError, and RangeError (Evan Lucas)
+* [[0113ba06b5](https://git.help.com/common-backend/build-ast/commit/0113ba06b5)] - **(SEMVER-MINOR)** builder: add .notEquals() (Evan Lucas)
+* [[192c68c7fb](https://git.help.com/common-backend/build-ast/commit/192c68c7fb)] - **(SEMVER-MINOR)** builder: add .objectPath() (Evan Lucas)
+
 # 2016-06-26, Version 1.4.4 (Stable)
 
 * [[1114c9d340](https://git.help.com/common-backend/build-ast/commit/1114c9d340)] - deps: tap@5.7.3 (Commit Bot)

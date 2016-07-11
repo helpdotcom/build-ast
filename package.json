@@ -1,6 +1,6 @@
 {
   "name": "@helpdotcom/build-ast",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "Make build AST nodes easy",
   "main": "index.js",
   "scripts": {
