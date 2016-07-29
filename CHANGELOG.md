@@ -1,3 +1,8 @@
+# 2016-07-29, Version 2.0.0 (Stable)
+
+* [[50d6037ffb](https://git.help.com/common-backend/build-ast/commit/50d6037ffb)] - **(SEMVER-MAJOR)** ast: add ability to explicitly specify computed identifiers (Evan Lucas)
+* [[a4165e17c7](https://git.help.com/common-backend/build-ast/commit/a4165e17c7)] - ci: switch from quay.io to gcr.io (Evan Lucas)
+
 # 2016-07-11, Version 1.5.0 (Stable)
 
 * [[e535ffc8bd](https://git.help.com/common-backend/build-ast/commit/e535ffc8bd)] - **(SEMVER-MINOR)** builder: add helpers for Error, TypeError, and RangeError (Evan Lucas)
