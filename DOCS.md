@@ -304,6 +304,9 @@ Returns a member expression for the given dot notated object path.
 
 * `str` [`<String>`][] Dot notated string (ex. 'admin.id')
 
+**Note**: To explicitly mark a segment as a computed property, prefix the
+segment with a `^`. Ex: `admin.^i` would represent `admin[i]`.
+
 
 #### Builder.Error(msg)
 

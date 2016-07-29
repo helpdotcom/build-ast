@@ -84,5 +84,8 @@ test('objectPath', (t) => {
   t.equal(gen(out), 'a.b.c')
   out = ast.objectPath('a')
   t.equal(gen(out), 'a')
+
+  out = ast.objectPath('obj.^__IDX__.prop.thing.^__IDX__1')
+  t.equal(gen(out), 'obj[__IDX__].prop.thing[__IDX__1]')
   t.end()
 })
