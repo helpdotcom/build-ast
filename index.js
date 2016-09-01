@@ -169,10 +169,14 @@ Builder.prototype.instanceOf = function instanceOf(left, right) {
 }
 
 Builder.module = function(name) {
+  const assignment = typeof name === 'string'
+    ? id(name)
+    : name
+
   return S.EXPRESSION(E.ASSIGNMENT(
     E.MEMBER(id('module'), id('exports'), false)
   , '='
-  , id(name)
+  , assignment
   ))
 }
 
