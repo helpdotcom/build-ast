@@ -338,6 +338,59 @@ If `msg` is a `string`, it will be properly wrapped. Otherwise, it will be
 unmodified.
 
 
+#### Builder.class()
+
+Returns a prototype to create a new class.
+
+
+##### Class.declaration(name, superClass)
+
+Forces the class to be a ClassDeclaration.
+
+* `name` [`<String>`][] The class name
+* `superClass` [`<String>`][] The superClass
+
+Returns `this`
+
+
+##### Class.expression(name, superClass)
+
+Forces the class to be a ClassExpression.
+
+* `name` [`<String>`][] The class name
+* `superClass` [`<String>`][] The superClass
+
+Returns `this`
+
+
+##### Class.ctor(args, body)
+
+Define the constructor of the class.
+
+* `args` [`<Array>`][] The function arguments
+* `body` [`<Array>`][] The function body block
+
+Returns `this`
+
+
+##### Class.method(name, args, body, options)
+
+Define a method of the class.
+
+* `name` [`<String>`][] The method name
+* `args` [`<Array>`][] The function arguments
+* `body` [`<Array>`][] The function body block
+
+Returns `this`
+
+
+##### Class.build()
+
+Builds the class into either a `ClassExpression` or a `ClassDeclaration`.
+
+Returns an [`<Object>`][]
+
+
 [`<Array>`]: https://mdn.io/array
 [`<Error>`]: https://mdn.io/Error
 [`<Function>`]: https://mdn.io/function

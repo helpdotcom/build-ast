@@ -6,6 +6,7 @@ const common = require('./common')
 const gen = common.gen
 const ast = Builder.ast
 const S = ast.statement
+const E = ast.expression
 
 test('Builder API', (t) => {
   const ignores = [
@@ -131,5 +132,54 @@ throw new TypeError(\`Weird \$\{ variable_name \}\`);
 throw new RangeError('NOPE');
 Event.debug = process.env.DEBUG === 1 && process.env.NODE_DEBUG !== 1`)
 
+  t.end()
+})
+
+test('Builder.class', (t) => {
+  const b = Builder()
+    .use('strict')
+    .module(
+      Builder
+        .class()
+        .expression('Room')
+        .ctor([
+          'options'
+        ], Builder.block([
+          Builder.declare('const', 'opts', Builder.callFunction(
+            'Object.assign'
+          , [E.OBJECT([]), Builder.id('options')]
+          ))
+        ]))
+        .method('toJSON', [], [
+          Builder.returns(
+            E.OBJECT([
+              ast.property(Builder.id('type'), Builder.string('biscuits'))
+            ])
+          )
+        ])
+        .build()
+    )
+    .push(
+      Builder
+        .class()
+        .declaration('Biscuits', 'EE')
+        .ctor([], Builder.block([]))
+        .build()
+    )
+    .program()
+
+  t.equal(gen(b), `'use strict';
+module.exports = class Room {
+  constructor(options) {
+    const opts = Object.assign({}, options)
+  }
+  toJSON() {
+    return { type: 'biscuits' }
+  }
+};
+class Biscuits extends EE {
+  constructor() {
+  }
+}`)
   t.end()
 })
