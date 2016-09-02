@@ -1,3 +1,8 @@
+# 2016-09-02, Version 2.1.0 (Stable)
+
+* [[5ee7176e59](https://git.help.com/common-backend/build-ast/commit/5ee7176e59)] - **(SEMVER-MINOR)** builder: add Builder.class() functionality (Evan Lucas)
+* [[b25a55c8a9](https://git.help.com/common-backend/build-ast/commit/b25a55c8a9)] - **(SEMVER-MINOR)** builder: allow assigning more than just name to `module.exports` (Evan Lucas)
+
 # 2016-07-29, Version 2.0.0 (Stable)
 
 * [[50d6037ffb](https://git.help.com/common-backend/build-ast/commit/50d6037ffb)] - **(SEMVER-MAJOR)** ast: add ability to explicitly specify computed identifiers (Evan Lucas)
