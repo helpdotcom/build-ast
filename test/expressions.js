@@ -33,6 +33,15 @@ test('BINARY', (t) => {
   t.end()
 })
 
+test('CONDITIONAL', (t) => {
+  const a = ast.literal(true)
+  const b = ast.literal(false)
+
+  const out = e.CONDITIONAL(a, a, b)
+  t.equal(gen(out), 'true ? true : false')
+  t.end()
+})
+
 test('LOGICAL', (t) => {
   const a = ast.identifier(true)
   const b = ast.literal('b')
