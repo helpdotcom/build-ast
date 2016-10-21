@@ -94,6 +94,10 @@ test('Builder', (t) => {
       , Builder.number(1)
       )
     ))
+    .ternary(Builder.objectPath('Event.test')
+      , ast.literal(true)
+      , ast.literal(false)
+    )
     .program()
 
   t.equal(gen(b), `'use strict';
@@ -130,7 +134,8 @@ Event.prototype.re2 = /abc$/;
 Event.TYPE = typeof thing.function;
 throw new TypeError(\`Weird \$\{ variable_name \}\`);
 throw new RangeError('NOPE');
-Event.debug = process.env.DEBUG === 1 && process.env.NODE_DEBUG !== 1`)
+Event.debug = process.env.DEBUG === 1 && process.env.NODE_DEBUG !== 1;
+Event.test ? true : false`)
 
   t.end()
 })

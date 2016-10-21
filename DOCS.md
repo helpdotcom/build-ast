@@ -270,6 +270,25 @@ Builder().string('Hi!')
 ```
 
 
+#### Builder().ternary(test, block, alt)
+
+Creates a `ConditionalStatement`
+
+* `test` AST Node
+* `block` The consequent block.
+* `alt` The alternate block.
+
+```js
+Builder().ternary(
+  Builder.objectPath('isActive')
+, Builder.string('User is active')
+, Builder.string('User is offline')
+)
+// will build the ast for
+isActive ? 'User is active' : 'User is offline'
+```
+
+
 #### Builder().throws(arg)
 
 Creates a `ThrowStatement` throwing the given _arg_.

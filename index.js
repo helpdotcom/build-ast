@@ -273,6 +273,14 @@ Builder.prototype.string = function string(val) {
   return this.push(Builder.string(val))
 }
 
+Builder.ternary = function(test, block, alt) {
+  return S.EXPRESSION(E.CONDITIONAL(test, block, alt))
+}
+
+Builder.prototype.ternary = function ternary(test, block, alt) {
+  return this.push(Builder.ternary(test, block, alt))
+}
+
 Builder.prototype.throws = function throws(arg) {
   return this.push(S.THROWS(arg))
 }
