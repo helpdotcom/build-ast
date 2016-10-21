@@ -1,3 +1,8 @@
+# 2016-10-21, Version 2.2.0 (Stable)
+
+* [[5a12253fb5](https://git.help.com/common-backend/build-ast/commit/5a12253fb5)] - **(SEMVER-MINOR)** ast: add ConditionalExpression (Ryan Mottley) [CHAT-1273](https://helpdotcom.atlassian.net/browse/CHAT-1273)
+* [[c636629ec1](https://git.help.com/common-backend/build-ast/commit/c636629ec1)] - **(SEMVER-MINOR)** builder: add Builder.ternary() (Ryan Mottley) [CHAT-1273](https://helpdotcom.atlassian.net/browse/CHAT-1273)
+
 # 2016-09-02, Version 2.1.0 (Stable)
 
 * [[5ee7176e59](https://git.help.com/common-backend/build-ast/commit/5ee7176e59)] - **(SEMVER-MINOR)** builder: add Builder.class() functionality (Evan Lucas)
