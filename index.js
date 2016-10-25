@@ -219,6 +219,12 @@ Builder.prototype.number = function number(val) {
   return this.push(Builder.number(val))
 }
 
+Builder.object = function(properties) {
+  return E.OBJECT(Object.keys(properties).map((key) => {
+    return ast.property(id(key), properties[key])
+  }))
+}
+
 Builder.or = function(left, right) {
   return E.LOGICAL(left, '||', right)
 }

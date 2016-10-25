@@ -210,6 +210,22 @@ Builder().number('3')
 ```
 
 
+#### Builder().object(properties)
+
+Creates an array of _properties_.
+
+* `properties` [`<Object>`][] An object mapping properties to values
+
+```js
+Builder().object({
+  foo: Builder.number('42')
+, bar: Builder.string('baz')
+})
+// will be the ast for
+{ foo: 42, bar: 'baz' }
+```
+
+
 #### Builder().or(...args)
 
 Takes a variable amount of arguments that should all be an [`<Object>`][].

@@ -74,6 +74,10 @@ test('Builder', (t) => {
     , Builder.number('2')
     , Builder.number('3')
     ]))
+    .assign('Event.prototype.object', Builder.object({
+        foo: Builder.number('42')
+      , bar: Builder.string('baz')
+    }))
     .assign('Event.prototype.re', Builder.regex(/abc$/i))
     .assign('Event.prototype.re2', Builder.regex('/abc$/'))
     .assign('Event.TYPE', Builder.typeof('thing.function'))
@@ -129,6 +133,10 @@ Event.prototype.ages = [
   2,
   3
 ];
+Event.prototype.object = {
+  foo: 42,
+  bar: 'baz'
+};
 Event.prototype.re = /abc$/i;
 Event.prototype.re2 = /abc$/;
 Event.TYPE = typeof thing.function;
