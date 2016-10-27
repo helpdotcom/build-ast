@@ -1,3 +1,8 @@
+# 2016-10-27, Version 2.3.0 (Stable)
+
+* [[bf63c53bc1](https://git.help.com/common-backend/build-ast/commit/bf63c53bc1)] - **(SEMVER-MINOR)** builder: add `Builder.object` (Anna Henningsen)
+* [[3eb94c401f](https://git.help.com/common-backend/build-ast/commit/3eb94c401f)] - gitignore: add node_modules (Anna Henningsen)
+
 # 2016-10-21, Version 2.2.0 (Stable)
 
 * [[5a12253fb5](https://git.help.com/common-backend/build-ast/commit/5a12253fb5)] - **(SEMVER-MINOR)** ast: add ConditionalExpression (Ryan Mottley) [CHAT-1273](https://helpdotcom.atlassian.net/browse/CHAT-1273)
