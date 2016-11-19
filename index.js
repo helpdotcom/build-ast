@@ -221,7 +221,9 @@ Builder.prototype.number = function number(val) {
 
 Builder.object = function(properties) {
   return E.OBJECT(Object.keys(properties).map((key) => {
-    return ast.property(id(key), properties[key])
+    const keyExpression = ast.utils.validIdentifier(key)
+        ? id(key) : ast.string(key)
+    return ast.property(keyExpression, properties[key])
   }))
 }
 

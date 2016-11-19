@@ -77,6 +77,7 @@ test('Builder', (t) => {
     .assign('Event.prototype.object', Builder.object({
         foo: Builder.number('42')
       , bar: Builder.string('baz')
+      , 'x-y': Builder.string('1')
     }))
     .assign('Event.prototype.re', Builder.regex(/abc$/i))
     .assign('Event.prototype.re2', Builder.regex('/abc$/'))
@@ -135,7 +136,8 @@ Event.prototype.ages = [
 ];
 Event.prototype.object = {
   foo: 42,
-  bar: 'baz'
+  bar: 'baz',
+  'x-y': '1'
 };
 Event.prototype.re = /abc$/i;
 Event.prototype.re2 = /abc$/;
