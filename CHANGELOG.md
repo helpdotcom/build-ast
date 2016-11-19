@@ -1,3 +1,8 @@
+# 2016-11-19, Version 2.3.1 (Stable)
+
+* [[3b45b2d80d](https://git.help.com/common-backend/build-ast/commit/3b45b2d80d)] - builder: allow generic keys for `Builder.object()` (Anna Henningsen)
+* [[5ce5fc167d](https://git.help.com/common-backend/build-ast/commit/5ce5fc167d)] - deps: tap@8.0.1 (Anna Henningsen)
+
 # 2016-10-27, Version 2.3.0 (Stable)
 
 * [[bf63c53bc1](https://git.help.com/common-backend/build-ast/commit/bf63c53bc1)] - **(SEMVER-MINOR)** builder: add `Builder.object` (Anna Henningsen)
