@@ -1,7 +1,7 @@
 {
   "name": "@helpdotcom/build-ast",
   "version": "2.3.1",
-  "description": "Make build AST nodes easy",
+  "description": "Make building AST nodes easy",
   "main": "index.js",
   "scripts": {
     "check": "check-pkg",
@@ -10,12 +10,10 @@
     "release": "releaseit"
   },
   "dependencies": {
-    "acorn": "~3.0.4",
-    "escodegen": "~1.8.0"
   },
   "devDependencies": {
-    "@helpdotcom/releaseit": "~2.0.5",
     "check-pkg": "~2.0.1",
+    "escodegen": "~1.8.0",
     "lintit": "~1.0.3",
     "tap": "~8.0.1"
   },
@@ -23,10 +21,10 @@
   "author": "Evan Lucas <evanlucas@me.com>",
   "repository": {
     "type": "git",
-    "url": "https://git.help.com/common-backend/build-ast"
+    "url": "https://github.com/helpdotcom/build-ast"
   },
-  "homepage": "https://git.help.com/common-backend/build-ast",
+  "homepage": "https://github.com/helpdotcom/build-ast",
   "bugs": {
-    "url": "https://git.help.com/common-backend/build-ast/issues"
+    "url": "https://github.com/helpdotcom/build-ast/issues"
   }
 }
