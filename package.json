@@ -1,6 +1,6 @@
 {
   "name": "@helpdotcom/build-ast",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Make building AST nodes easy",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,7 @@
     "test": "tap test --cov",
     "release": "releaseit"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "check-pkg": "~2.0.1",
     "escodegen": "~1.8.0",

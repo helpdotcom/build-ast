@@ -1,3 +1,7 @@
+# 2016-11-30, Version 2.3.2 (Stable)
+
+* [[67dfa62f49](https://github.com/helpdotcom/build-ast/commit/67dfa62f49)] - package: cleanup package.json for public usage (Evan Lucas)
+
 # 2016-11-19, Version 2.3.1 (Stable)
 
 * [[3b45b2d80d](https://git.help.com/common-backend/build-ast/commit/3b45b2d80d)] - builder: allow generic keys for `Builder.object()` (Anna Henningsen)
