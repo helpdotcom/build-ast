@@ -1,3 +1,7 @@
+# 2017-01-08, Version 2.3.3 (Stable)
+
+* [[457bbb768e](https://github.com/helpdotcom/build-ast/commit/457bbb768e)] - doc: added basic example to readme (Evan Lucas)
+
 # 2016-11-30, Version 2.3.2 (Stable)
 
 * [[67dfa62f49](https://github.com/helpdotcom/build-ast/commit/67dfa62f49)] - package: cleanup package.json for public usage (Evan Lucas)
