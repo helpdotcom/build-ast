@@ -45,6 +45,10 @@ test('number', (t) => {
   t.equal(gen(out), '1', 'number')
   out = ast.number('1')
   t.equal(gen(out), '1', 'number')
+  out = ast.number(-1)
+  t.equal(gen(out), '-1', 'negative number')
+  out = ast.number('-1')
+  t.equal(gen(out), '-1', 'negative number')
   t.end()
 })
 
