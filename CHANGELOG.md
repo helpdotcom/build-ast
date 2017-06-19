@@ -1,3 +1,8 @@
+# 2017-06-19, Version 2.3.4 (Stable)
+
+* [[a3de40e6d2](https://github.com/helpdotcom/build-ast/commit/a3de40e6d2)] - ast: properly handle negative number literals (Evan Lucas)
+* [[402051e380](https://github.com/helpdotcom/build-ast/commit/402051e380)] - ci: test on node 8 (Evan Lucas)
+
 # 2017-01-08, Version 2.3.3 (Stable)
 
 * [[457bbb768e](https://github.com/helpdotcom/build-ast/commit/457bbb768e)] - doc: added basic example to readme (Evan Lucas)
